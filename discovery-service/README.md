@@ -7,7 +7,7 @@ It will start up on port 8761 and serve the Eureka API from http://localhost:876
 
 | Path             | Description  |
 |------------------|--------------|
-| /                        | Home page (HTML UI) listing service registrations |
+| /                        | Home page (HTML UI) that lists services in the registry |
 | /eureka/apps         | JSON registration metadata |
 | /health         | JSON health check metadata |
-| /info         | JSON health check metadata |
+| /info         | JSON information about the Service Registry |
