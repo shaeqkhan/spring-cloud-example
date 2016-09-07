@@ -1,0 +1,7 @@
+---
+applications:
+- name: discovery_service
+  instances: 1
+  memory: 256M
+  services:
+    - config_server
