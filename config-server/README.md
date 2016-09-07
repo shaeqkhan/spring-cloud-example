@@ -17,7 +17,7 @@ http://localhost:8888/config_server/status
 | Variable         | Description  |
 |------------------|--------------|
 |{service_name}	   | name of the microservice registered in the Discovery Service, can be found in the bootstrap.yml file {spring.application.name} |
-|{profile_name}    | distinct build profiles for environments |
+|{profile_name}    | distinct build profiles for environments, default value = 'default' |
 
 
 
