@@ -6,13 +6,15 @@ Uses native profiles to load yml files to push.
 
 http://localhost:8888/config_server/status
 
+
 ## Resources
 
 | Path             | Description  |
 |------------------|--------------|
-| /config_server   | application context |
-| /config_server/status | Displays the health status of the service |
-| /config_server/{service_name}/{profile_name} | Display config properties of the service for the selected profile |
+| /config   | application context |
+| /config/health | Displays the health status of the service |
+| /config/{service_name}/{profile_name} | Display config properties of the service for the selected profile |
+
 
 ## Definitions
 
@@ -22,26 +24,21 @@ http://localhost:8888/config_server/status
 |{profile_name}    | distinct build profiles for environments, default value = 'default' |
 
 
-
 ## JASYPT Encryption Command
 
-java -cp ~/.m2/repository/org/jasypt/jasypt/1.9.2/jasypt-1.9.2.jar  org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input="samplepassword" password=public-key algorithm=PBEWithMD5AndDES
+java -cp ~/.m2/repository/org/jasypt/jasypt/1.9.2/jasypt-1.9.2.jar  org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input="samplepassword" password=private-key algorithm=PBEWithMD5AndDES
 
-Sample Output ->
+###Sample Output ->
 
 ----ENVIRONMENT-----------------
 
 Runtime: Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 24.45-b08
 
-
-
 ----ARGUMENTS-------------------
 
 algorithm: PBEWithMD5AndDES
 input: samplepassword
-password: public-key
-
-
+password: private-key
 
 ----OUTPUT----------------------
 
