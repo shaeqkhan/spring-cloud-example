@@ -1,10 +1,10 @@
-# Spring Cloud Config Server
+# Spring Cloud - Config Server
 
 Run this project as a Spring Boot app (e.g. import into IDE and run main method, or use mvn spring-boot:run). 
 It will start up on port 8888 and register with Eureka and communicate to the configured services.
 Uses native profiles to load yml files to push.
 
-http://localhost:8888/config_server/status
+http://localhost:8888/config
 
 
 ## Resources

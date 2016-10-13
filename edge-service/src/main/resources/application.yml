@@ -1,0 +1,27 @@
+server:
+  port: 8765
+  contextPath: /${spring.application.name}
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 8761
+    statusPageUrlPath: ${server.contextPath}/health
+    leaseExpirationDurationInSeconds: 30
+    metadataMap:
+      instanceId: ${spring.application.name}:${server.port}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    healthcheck:
+      enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
