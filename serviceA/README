@@ -30,6 +30,7 @@ http://localhost:8080/serviceA
 |------------------|--------------|
 | localhost:8080/serviceA | application context |
 | localhost:8080/serviceA/health | Displays the health status of the service |
+| localhost:8080/serviceA/swagger-ui.html | Swagger UI |
 
 
 
