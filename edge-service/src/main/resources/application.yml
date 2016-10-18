@@ -20,11 +20,15 @@ eureka:
  
 zuul:
   routes:
-    serviceA:
-      path: /serviceA/**
-      serviceId: serviceA
-      stripPrefix: false
-    serviceB:
-      path: /serviceB/**
-      serviceId: serviceB
+#    serviceA:
+#      path: /serviceA/**
+#      serviceId: serviceA
+#      stripPrefix: false
+#    serviceB:
+#      path: /serviceB/**
+#      serviceId: serviceB
+#      stripPrefix: false
+    reservations:
+      path: /reservations/**
+      serviceId: reservations
       stripPrefix: false      
