@@ -3,7 +3,7 @@
 
 ## Tools
 
-Apache Maven - https://maven.apache.org/ |
+Apache Maven - https://maven.apache.org/
 
 
 
@@ -38,9 +38,9 @@ http://localhost:8888/config
 
 | Path             | Description  |
 |------------------|--------------|
-| /config   | application context |
-| /config/health | Displays the health status of the service |
-| /config/{service_name}/{profile_name} | Display config properties of the service for the selected profile |
+| localhost:8888/config   | application context |
+| localhost:8888/config/health | Displays the health status of the service |
+| localhost:8888/config/{service_name}/{profile_name} | Display config properties of the service for the selected profile |
 
 
 
