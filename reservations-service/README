@@ -28,9 +28,10 @@ http://localhost:8082/api
 
 | Path             | Description  |
 |------------------|--------------|
-| localhost:8082/api | application context |
-| localhost:8082/api/health | Displays the health status of the service |
-| localhost:8082/api/swagger-ui.html | Swagger UI |
+| localhost:8082/reservations | application context |
+| localhost:8082/reservations/health | Displays the health status of the service |
+| localhost:8082/reservations/swagger-ui.html | Swagger UI |
+| localhost:8082/reservations/id/{id} | GET reservation |
 
 
 
