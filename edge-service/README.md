@@ -39,6 +39,10 @@ http://localhost:8765/edge
 |------------------|--------------|
 | localhost:8765/edge | application context |
 | localhost:8765/edge/health | Displays the health status of the service |
+| localhost:8765/edge/serviceA/facilities/id/1 | sample REST call |
+| localhost:8765/edge/serviceA/facilities/user?username=test | sample REST call |
+| localhost:8765/edge/serviceB/customers/id/1 | sample REST call |
+| localhost:8765/edge/serviceB/employees/id/1 | sample REST call |
 
 
 

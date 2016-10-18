@@ -17,3 +17,14 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
     healthcheck:
       enabled: true
+ 
+zuul:
+  routes:
+    serviceA:
+      path: /serviceA/**
+      serviceId: serviceA
+      stripPrefix: false
+    serviceB:
+      path: /serviceB/**
+      serviceId: serviceB
+      stripPrefix: false      
