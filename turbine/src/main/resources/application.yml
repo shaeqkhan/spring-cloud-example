@@ -1,0 +1,30 @@
+info:
+  component: turbine
+
+server:
+  port: 8989
+
+logging:
+  level:
+    root: INFO
+
+eureka:
+  instance:
+    hostname: localhost
+    statusPageUrlPath: /status
+    leaseExpirationDurationInSeconds: 25
+    metadataMap:
+      instanceId: ${spring.application.name}:${server.port}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+    healthcheck:
+      enabled: true
+
+#appConfig is a list of the services you want to watch service1,service2,etc
+turbine:
+  appConfig: providerapp
+  clusterNameExpression: new String("default")
+  
