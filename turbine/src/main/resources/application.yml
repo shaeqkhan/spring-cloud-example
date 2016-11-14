@@ -27,6 +27,6 @@ eureka:
       enabled: true
 
 #appConfig is a list of the services you want to watch service1,service2,etc
-turbine:
-  appConfig: reservations,serviceA
-  clusterNameExpression: new String("default") 
+#turbine:
+#  appConfig: reservations
+#  clusterNameExpression: new String("default") 
