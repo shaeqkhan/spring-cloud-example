@@ -4,27 +4,29 @@ info:
 server:
   port: 8989
 
-logging:
-  level:
-    root: INFO
-
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  
 eureka:
   instance:
     hostname: localhost
-    statusPageUrlPath: /status
-    leaseExpirationDurationInSeconds: 25
+    port: 8761
+    statusPageUrlPath: ${server.contextPath}/health
+    leaseRenewalIntervalInSeconds: 25
     metadataMap:
       instanceId: ${spring.application.name}:${server.port}
   client:
-    registerWithEureka: true
+#    registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
     healthcheck:
       enabled: true
 
 #appConfig is a list of the services you want to watch service1,service2,etc
 turbine:
-  appConfig: providerapp
-  clusterNameExpression: new String("default")
-  
+  appConfig: reservations,serviceA
+  clusterNameExpression: new String("default") 
