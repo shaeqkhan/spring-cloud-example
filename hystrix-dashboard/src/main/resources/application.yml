@@ -1,0 +1,34 @@
+info:
+  component: hystrix-dashboard
+
+server:
+  port: 7979
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+      
+eureka:
+  instance:
+    virtualHostName: ${spring.application.name}
+#    hostname: localhost
+#    port: 8761
+#    statusPageUrlPath: ${server.contextPath}/health
+#    leaseExpirationDurationInSeconds: 30
+#    metadataMap:
+#      instanceId: ${spring.application.name}:${server.port}
+  client:
+    region: default
+#    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    healthcheck:
+      enabled: true  
