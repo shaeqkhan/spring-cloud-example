@@ -1,3 +1,5 @@
 spring:
   application:
     name: reservations
+  rabbitmq:
+    addresses: localhost:5672

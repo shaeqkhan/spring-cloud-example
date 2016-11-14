@@ -7,7 +7,7 @@ eureka:
     hostname: localhost
     port: 8761
     statusPageUrlPath: ${server.contextPath}/health
-    leaseExpirationDurationInSeconds: 30
+    leaseRenewalIntervalInSeconds: 25
     metadataMap:
       instanceId: ${spring.application.name}:${server.port}
   client:
@@ -24,3 +24,8 @@ logging:
     com:
       netflix:
         hystrix: DEBUG
+
+#hystrix:
+#  stream:
+#    bus: 
+#      enabled: true

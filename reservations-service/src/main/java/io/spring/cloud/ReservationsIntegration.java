@@ -45,4 +45,13 @@ public class ReservationsIntegration {
 		return null;
 	}
 	
+	@HystrixCommand(fallbackMethod = "defaultStatus")
+	public String getStatus() {
+		return "SUCCESS";
+	}
+	
+	public String defaultStatus() {
+		LOG.error("Could not load status...");
+		return "FAIL";
+	}
 }

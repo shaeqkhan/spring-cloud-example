@@ -18,14 +18,15 @@ public class ReservationsController {
 	private static final Logger LOG = Logger.getLogger(ReservationsController.class);
 	
 	@Autowired
-	private ReservationsIntegration aggregator;
+	private ReservationsIntegration integration;
 	
 	@ApiOperation(value = "/id/{reservationID}", notes = "default call to this aggregator", response = Reservation.class)
 	@RequestMapping(value = "/id/{reservationID}", method = RequestMethod.GET, produces = "application/json")
 	public Reservation getReservation(@PathVariable String reservationID) {
 		
 		LOG.info("controller....");
-		return aggregator.getReservation(reservationID);
+		LOG.info(integration.getStatus());
+		return integration.getReservation(reservationID);
 		
 	}
 	
