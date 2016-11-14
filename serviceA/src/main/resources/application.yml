@@ -7,7 +7,7 @@ eureka:
     hostname: localhost
     port: 8761
     statusPageUrlPath: ${server.contextPath}/health
-    leaseExpirationDurationInSeconds: 30
+    leaseRenewalIntervalInSeconds: 25
     metadataMap:
       instanceId: ${spring.application.name}:${server.port}
   client:
@@ -17,3 +17,15 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
     healthcheck:
       enabled: true
+      
+# print exception in log stack trace
+logging:
+  level:
+    com:
+      netflix:
+        hystrix: DEBUG
+
+#hystrix:
+#  stream:
+#    bus: 
+#      enabled: true

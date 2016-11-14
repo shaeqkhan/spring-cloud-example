@@ -3,6 +3,7 @@ package io.spring.cloud;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,11 +19,14 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/facilities")
 public class FacilityController {
 	
+	@Autowired
+	private FacilityIntegration integration;
+	
 	@ApiOperation(value = "/id/{facilityID}", notes = "GET a facility for a facility ID", response = Facility.class)
 	@RequestMapping(value = "/id/{facilityID}", method = RequestMethod.GET, produces = "application/json")
 	public Facility getFacility(@PathVariable int facilityID) {
 		
-		return new Facility("Facility A", "1234AB", "987-654-3210");
+		return integration.getFacility(facilityID);
 		
 	}
 	
